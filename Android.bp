@@ -49,24 +49,25 @@ cc_prebuilt_library_shared {
 
 
 cc_prebuilt_library_shared {
-	name: "com.motorola.hardware.display.panel@1.0",
-	owner: "motorola",
-	strip: {
-		none: true,
-	},
-	target: {
-		: {
-			srcs: ["proprietary//lib/com.motorola.hardware.display.panel@1.0.so"],
-			shared_libs: [ ],
-		},
-		: {
-			srcs: ["proprietary//lib64/com.motorola.hardware.display.panel@1.0.so"],
-			shared_libs: [ ],
-		},
-	},
-	compile_multilib: "both",
-	prefer: true,
+    name: "com.motorola.hardware.display.panel@1.0",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        arm: {
+            srcs: ["proprietary//lib/com.motorola.hardware.display.panel@1.0.so"],
+            shared_libs: [],
+        },
+        arm64: {
+            srcs: ["proprietary//lib64/com.motorola.hardware.display.panel@1.0.so"],
+            shared_libs: [],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
 }
+
 
 cc_prebuilt_library_shared {
 	name: "com.motorola.hardware.display.panel@1.1",
